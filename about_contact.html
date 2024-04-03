@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About/Contact</title>
+    <link rel="stylesheet" href="./css/about_contact.css">
+</head>
+<body class="ogun">
+    <!-- Toggle button to open/close the vertical navbar -->
+    <div class="toggle-button" onclick="toggleNavbar()">☰</div>
+    <script>
+        function show() {
+            document.getElementById('navbar').classList.toggle('active');
+        }
+    </script>
+
+    <!-- Navigation bar container -->
+    <div class="navbar" id="navbar">
+        <!-- Extra buttons -->
+        <button onclick="videos()" class="navbar-button">Videos</button>
+        <button onclick="audios()" class="navbar-button">Audios</button>
+        <button onclick="aboutContact()" class="navbar-button">About/contact</Button>
+        <!-- Logout button -->
+        <button onclick="logout()" class="navbar-button">Logout</button>    
+    </div>
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <ul class="accordion">
+            <li>
+                <input type="radio" name="accordion" id="first">
+                <label for="first">What is Mavin</label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium obcaecati modi quas velit incidunt magnam! Libero sint laboriosam tempore atque reiciendis esse earum perspiciatis maxime itaque magnam, quas, facere excepturi?
+                    </p>
+                </div>
+            </li> 
+            <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">How much does mavin cost</label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium obcaecati modi quas velit incidunt magnam! Libero sint laboriosam tempore atque reiciendis esse earum perspiciatis maxime itaque magnam, quas, facere excepturi?
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="third">
+                <label for="third">where can i watch?</label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium obcaecati modi quas velit incidunt magnam! Libero sint laboriosam tempore atque reiciendis esse earum perspiciatis maxime itaque magnam, quas, facere excepturi?
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="fourth">
+                <label for="fourth">How do i cancel? </label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium obcaecati modi quas velit incidunt magnam! Libero sint laboriosam tempore atque reiciendis esse earum perspiciatis maxime itaque magnam, quas, facere excepturi?
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="fifth">
+                <label for="fifth">what can i watch on mavin?</label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium obcaecati modi quas velit incidunt magnam! Libero sint laboriosam tempore atque reiciendis esse earum perspiciatis maxime itaque magnam, quas, facere excepturi?
+                    </p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="sixth">
+                <label for="sixth">Is mavin good for kids?</label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium obcaecati modi quas velit incidunt magnam! Libero sint laboriosam tempore atque reiciendis esse earum perspiciatis maxime itaque magnam, quas, facere excepturi?
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <h2>Questions? call 08167685766</h2>
+       <div class="row">
+           <div class="col">
+               <a href="#">FAQ</a>
+               <a href="#">Investor Relations</a>
+               <a href="#">Privacy</a>
+               <a href="#">Speed Test</a>
+           </div>
+           <div class="col">
+            <a href="#">Help</a>
+            <a href="#">Jobs</a>
+            <a href="#">Cookies Preferences</a>
+            <a href="#">Legal Notices</a>
+        </div>
+        <div class="col">
+            <a href="#">Account</a>
+            <a href="#">Ways to watch</a>
+            <a href="#">Corporate Information</a>
+            <a href="#">Only on Mavin</a>
+        </div>
+        <div class="col">
+         <a href="#">Media Center</a>
+         <br><a href="#">Terms of Use</a>
+         <a href="#">Contact Us</a>
+        </div>
+       </div> 
+       <button class="language-btn">English <img src="../images/down-icon.png" alt=""></button>
+       <p class="copyright-text">Mavin Nigeria</p>
+    </div>
+
+    <!-- Script for toggleNavbar and logout functions -->
+    <script>
+        // Function to toggle the visibility of the navbar
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            const body = document.body;
+
+            // Check if the navbar is open
+            const isOpen = getComputedStyle(navbar).left === '0px';
+
+            if (isOpen) {
+                // Close the navbar
+                navbar.style.left = '-300px';
+                body.style.overflow = 'auto';
+            } else {
+                // Open the navbar
+                navbar.style.left = '0';
+                body.style.overflow = 'hidden';
+            }
+        }
+
+        // Function to handle logout
+        function logout() {
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        }
+
+        // Function to handle videos
+        function videos() {
+            // Redirect to the video page
+            window.location.href = 'index.html';
+        }
+
+        // Function to handle audio page
+        function audios() {
+            // Redirect to the audio page
+            window.location.href = 'audio.html';
+        }
+
+        // Function to handle about/contact page
+        function aboutContact() {
+            // Stay on the current page (about/contact)
+        }
+    </script>
+
+    <!-- Additional styles for the about/contact page -->
+    <style>
+        /* Add your custom styles for the about/contact page here */
+        .about-contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</body>
+</html>

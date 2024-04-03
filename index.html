@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mavin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Toggle button to open/close the vertical navbar -->
+    <div class="toggle-button" onclick="toggleNavbar()">☰</div>
+
+    <!-- Navigation bar container -->
+    <div class="navbar" id="navbar">
+        <!-- Button to navigate to video page -->
+        <button onclick="navigateTo('index.html')" class="navbar-button">Videos</button>
+        <!-- Button to navigate to audio page -->
+        <button onclick="navigateTo('audio.html')" class="navbar-button">Audios</button>
+        <!-- Button to navigate to about page -->
+        <button onclick="navigateTo('about_contact.html')" class="navbar-button">About</button>
+        <!-- Logout button -->
+        <button onclick="logout()" class="navbar-button">Logout</button>
+    </div>
+    <main class="container">
+      
+        <section class="main-video">
+            <video src="videos/manipulate text background.mp4" controls autoplay muted></video>
+            <h3 class="title"></h3>
+        
+        </section>
+
+        <section class="video-playlist"><center>
+            <h3 class="title">Playlist</h3><br><br>
+            
+           
+            <div class="videos">
+
+            </div>
+        </section>
+    </main>
+    <script>
+        // Function to toggle the visibility of the navbar
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            const body = document.body;
+
+            // Check if the navbar is open
+            const isOpen = getComputedStyle(navbar).left === '0px';
+
+            if (isOpen) {
+                // Close the navbar
+                navbar.style.left = '-200px';
+                body.style.overflow = 'auto';
+            } else {
+                // Open the navbar
+                navbar.style.left = '0';
+                body.style.overflow = 'hidden';
+            }
+        }
+
+        // Function to navigate to different pages
+        function navigateTo(page) {
+            // Redirect to the specified page
+            window.location.href = page;
+        }
+
+        // Function to handle logout
+        function logout() {
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mavin Audio Player</title>
+    <link rel="stylesheet" href="./audio.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <!-- Toggle button to open/close the vertical navbar -->
+    <div class="toggle-button" onclick="toggleNavbar()">☰</div>
+
+    <!-- Navigation bar container -->
+    <div class="navbar" id="navbar">
+        <!-- Extra buttons -->
+        <button onclick="videos()" class="navbar-button">Videos</button>
+        <button onclick="audios()" class="navbar-button">Audios</button>
+        <button onclick="aboutContact()" class="navbar-button">About/Contact</Button>
+        <!-- Logout button -->
+        <button onclick="logout()" class="navbar-button">Logout</button>    
+    </div>
+
+    <div class="wrapper">
+        <div class="top-bar">
+            <i class="material-icons">expand_more</i>
+            <span>Now Playing</span>
+            <i class="material-icons">more_horiz</i>
+        </div>
+        <div class="img-area">
+            <img src="" alt="">
+        </div>
+        <div class="song-details">
+            <p class="name"></p>
+            <p class="artist"></p>
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar">
+                <audio id="main-audio" src=""></audio>
+            </div>
+            <div class="song-timer">
+                <span class="current-time">0:00</span>
+                <span class="max-duration">0:00</span>
+            </div>
+        </div>
+        <div class="controls">
+            <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+            <i id="prev" class="material-icons">skip_previous</i>
+            <div class="play-pause">
+                <i class="material-icons play">play_arrow</i>
+            </div>
+            <i id="next" class="material-icons">skip_next</i>
+            <i id="more-music" class="material-icons">queue_music</i>
+        </div>
+        <div class="music-list">
+            <div class="header">
+                <div class="row">
+                    <i class= "list material-icons">queue_music</i>
+                    <span>Music list</span>
+                </div>
+                <i id="close" class="material-icons">close</i>
+            </div>
+            <ul>
+                <!-- here li list are coming from js -->
+            </ul>
+        </div>
+    </div>
+    <video id="video-background" autoplay muted loop>
+        <source src="./videos/istockphoto-1502218391-640_adpp_is.mp4" type="video/mp4">
+    </video>
+    
+
+    <!-- Script for toggleNavbar and logout functions -->
+    <script>
+        // Function to toggle the visibility of the navbar
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            const body = document.body;
+
+            // Check if the navbar is open
+            const isOpen = getComputedStyle(navbar).left === '0px';
+
+            if (isOpen) {
+                // Close the navbar
+                navbar.style.left = '-300px';
+                body.style.overflow = 'auto';
+            } else {
+                // Open the navbar
+                navbar.style.left = '0';
+                body.style.overflow = 'hidden';
+            }
+        }
+
+        // Function to handle logout
+        function logout() {
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        }
+        
+        // Function to handle videos
+        function videos() {
+            // Redirect to the video page
+            window.location.href = 'index.html';
+        }
+        
+        // Function to handle audio page
+        function audios() {
+            // Redirect to the audio page
+            window.location.href = 'audio.html'; // Adjusted to lead straight to the audio page
+        }
+
+        // Function to handle about/contact page
+        function aboutContact() {
+            // Redirect to the about/contact page
+            window.location.href = 'about_contact.html';
+        }
+
+        // Additional script functionality can be added here
+
+    </script>
+    <script src="./music-list.js"></script>
+    <script src="./audio.js"></script>
+</body>
+</html>
+
+
+
