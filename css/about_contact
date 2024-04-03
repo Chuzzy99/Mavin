@@ -1,1 +1,137 @@
+.ogun{
+    background-color: black;
+}
+.faq{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+    background-color: black;
+    color: whitesmoke;
+    margin-left: 100px;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+.accordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s,padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+.footer{
+    padding: 50px 15% 10px; 
+    border-top: 6px solid #333;
+    color: #777;
+    background-color: black;
+}
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.footer .col{
+    flex-grow: 1;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.footer .col a{
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.footer .row{
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.copyright-text{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.language-btn{
+    background-color: #777;
+}
+.toggle-button {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    color: whitesmoke;
+    z-index: 1; /* Ensure the toggle button is above other elements */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
 
+.navbar {
+    width: 200px;
+    height: 100%;
+    background-color: transparent;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: left 0.3s ease;
+}
+
+.navbar-button {
+    padding: 8px;
+    background-color: wheat;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-button:hover {
+    background-color: darkslategray;
+}
